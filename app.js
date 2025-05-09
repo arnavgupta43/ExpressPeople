@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const people = require("./routes/people");
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use("/api/people", people);
 
 app.listen(6000, () => {

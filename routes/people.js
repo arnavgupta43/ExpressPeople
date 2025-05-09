@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const data = require("../data/data");
 let people = data.people;
-
+const logger = require("../middleware/logger");
 function checkforId(id) {
   return people.some((per) => per.id === id);
 }
+router.use(logger);
 
 router.get("/", (req, res) => {
   console.log("GET /api/people hit");
@@ -35,12 +36,10 @@ router.get("/query", (req, res) => {
       if (per.id === id) return per;
     });
     if (!person) {
-      return res
-        .status(404)
-        .json({
-          sucess: false,
-          data: `The person with id ${id} does not exist`,
-        });
+      return res.status(404).json({
+        sucess: false,
+        data: `The person with id ${id} does not exist`,
+      });
     } else {
       return res.status(200).json({ sucess: true, data: person.name });
     }

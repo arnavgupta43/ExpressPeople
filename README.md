@@ -29,15 +29,15 @@ A lightweight, beginner-friendly RESTful API built using Node.js and Express.js 
 
 ---
 
-project-root/
-│
-├── data/
-│ └── data.js # Static people data (array of objects)
-├── routes/
-│ └── people.js # All people-related API routes
-├── logger.js # Custom middleware logger
-├── app.js # Main app setup
-└── package.json
+- project-root/
+- │
+- ├── data/
+- │└── data.js # Static people data (array of objects)
+- ├── routes/
+- │└── people.js # All people-related API routes
+- ├── logger.js # Custom middleware logger
+- ├── app.js # Main app setup
+- └── package.json
 
 ---
 
